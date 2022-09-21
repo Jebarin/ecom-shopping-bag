@@ -1,6 +1,23 @@
-const Button = () =>{
+import styles from './styles.module.scss'
+
+/**
+ * Button Component
+ * @param {*} props 
+ * @returns 
+ */
+const Button = (props) =>{
+    const {action, id, classes, busy, disabled, onClick, busyLabel, children} = props;
+
     return (
-        <button />
+        <button
+          type={action}
+          id={id}
+          className={`${styles.btn} ${classes}`}
+          disabled={busy || disabled}
+          onClick={onClick}
+        >
+          {busy ? busyLabel : children}
+        </button>
     )
 };
 

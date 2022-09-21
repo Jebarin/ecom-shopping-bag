@@ -1,0 +1,17 @@
+.btn{
+    border: 1px solid #3b3a3a;
+    background-color: #fff;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 30px;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &:hover{
+        color: #3b3a3a;
+    }
+}
