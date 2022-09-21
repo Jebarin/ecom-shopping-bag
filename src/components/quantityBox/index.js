@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import styles from './styles.module.scss';
 
 export const MIN_QUANTITY = 1;
 export const MAX_QUANTITY = 10;
@@ -24,9 +25,9 @@ const QuantityBox = (props) => {
     }, [defaultQty]);
 
     return (
-        <div>
+        <div className={styles.qtyBox}>
             <button data-testid="quantity-decrease" disabled={quanity <= minQuanity} onClick={decreaseQuantity}>-</button>
-                <div data-testid="quantity-box">{quanity}</div>
+                <span data-testid="quantity-box">{quanity}</span>
             <button data-testid="quantity-increase" disabled={quanity >= maxQuantity} onClick={increaseQuantity}>+</button>
         </div>
     )
