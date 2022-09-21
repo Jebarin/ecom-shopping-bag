@@ -16,18 +16,31 @@ test('renders QuantityBox with default props', () => {
     expect(increaseButton.disabled).toEqual(false);
 });
 
-test('increase quantity by 1', () => {
-    
+test('increase/decrease quantity by 1', () => {
+    const { getByTestId } = render(<QuantityBox />);
+
+    const decreaseButton =  getByTestId('quantity-decrease');
+    const increaseButton =  getByTestId('quantity-increase');
+
+    expect(getByTestId('quantity-box').innerHTML).toEqual(1);
+
+    fireEvent.click(increaseButton);
+
+    expect(getByTestId('quantity-box').innerHTML).toEqual(2);
+
+    fireEvent.click(decreaseButton);
+
+    expect(getByTestId('quantity-box').innerHTML).toEqual(1);
 });
 
-test('decrease quantity by 1', () => {
-    
-});
-  
 test('should not exceed max quantity', () => {
     
 });
   
 test('should not exceed min quantity', () => {
+     
+});
+
+test('trigger a callback when quanity updated', () => {
      
 });
