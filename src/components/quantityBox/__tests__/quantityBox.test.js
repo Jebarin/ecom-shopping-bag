@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import QuantityBox from '../index';
 
 const MIN_QUANTITY = 1;
@@ -34,13 +34,31 @@ test('increase/decrease quantity by 1', () => {
 });
 
 test('should not exceed max quantity', () => {
-    
+    const { getByTestId } = render(<QuantityBox  initialQuantity={10} />);
+    const increaseButton =  getByTestId('quantity-increase');
+ 
+    fireEvent.click(increaseButton);
+
+    expect(getByTestId('quantity-box').innerHTML).toEqual(MAX_QUANTITY);
+    expect(increaseButton.disabled).toEqual(true);
 });
   
 test('should not exceed min quantity', () => {
-     
+    const { getByTestId } = render(<QuantityBox  initialQuantity={1} />);
+    const decreaseButton =  getByTestId('quantity-decrease');
+
+    fireEvent.click(decreaseButton);
+
+    expect(getByTestId('quantity-box').innerHTML).toEqual(MIN_QUANTITY);
+    expect(decreaseButton.disabled).toEqual(true);
 });
 
 test('trigger a callback when quanity updated', () => {
-     
+    const callBack = jest.fn();
+    const { getByTestId } = render(<QuantityBox  initialQuantity={5} />);
+    const increaseButton =  getByTestId('quantity-increase');
+
+    fireEvent.click(increaseButton);
+    expect(callBack).toHaveBeenCalledTimes(1);
+    expect(callBack).toHaveBeenCalledWith(6);
 });
