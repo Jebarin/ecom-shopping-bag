@@ -1,4 +1,4 @@
-import { getBagCount, moveItemToWishList, removeItemFromCart, updateCartQuantity } from '../cart.helper';
+import { getBagCount, moveItemToWishList, removeItemFromCart, removeItemFromWishList, updateCartQuantity } from '../cart.helper';
 
 const cartData = {
   "cartItems": [
@@ -44,4 +44,12 @@ test('move to wishlist', () => {
 
   expect(res.cartItems.length).toEqual(0);
   expect(res.savedList.length).toEqual(2);
-})
+});
+
+test('move to bag', () => {
+  const cart = {...cartData};
+  const res = removeItemFromWishList(cart.cartItems, cart.savedList, cart.savedList[0]["itemId"]);
+
+  expect(res.cartItems.length).toEqual(2);
+  expect(res.savedList.length).toEqual(0);
+});
