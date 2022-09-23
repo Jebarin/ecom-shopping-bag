@@ -11,3 +11,10 @@ export const fetchCartData = async () => {
     
     return response?.json?.();
 }
+
+export const getBagCount = (items = []) =>{
+    let qty = 0;
+    items.forEach((item)=>  qty += item.quantity)
+
+    return qty;
+}

@@ -1,12 +1,20 @@
+import {useEffect} from 'react';
 import CartItems from './cartItems/cartItems'; 
 import WishList from './wishList';
 import styles from './cart.module.scss';
+import {useCartContext} from './cartContext';
 
 /**
  * Cart
  * @returns 
  */
 const Cart = () =>{
+    const { getCart, showWishList } = useCartContext();
+
+    useEffect(() => {
+        getCart();
+    }, []);
+
     return (
         <div className={styles['section']}>
             <section className={styles['section-left']}>
