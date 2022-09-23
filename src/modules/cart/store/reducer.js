@@ -1,5 +1,5 @@
 
-import {UPDATE_CART} from './actionTypes'
+import {UPDATE_CART, REMOVE_ITEM} from './actionTypes'
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -8,6 +8,14 @@ const cartReducer = (state, action) => {
         ...state, 
         isCartLoaded: true,
         ...action.payload 
+      };
+    }
+    case REMOVE_ITEM: {
+      return { 
+        ...state,
+        cartItems: [
+          ...action.payload 
+        ]
       };
     }
     default:

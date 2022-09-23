@@ -1,5 +1,5 @@
-import {UPDATE_CART} from './actionTypes';
-import { fetchCartData} from '../cart.helper';
+import {UPDATE_CART, REMOVE_ITEM} from './actionTypes';
+import { fetchCartData, removeItemFromCart} from '../cart.helper';
 
 const storeActions = (dispatch, state) =>{
 
@@ -11,8 +11,21 @@ const storeActions = (dispatch, state) =>{
           payload: data
         });
     }
+
+    const removeItem = (itemId) => {
+      const {cartItems} = state;
+      const data = removeItemFromCart(cartItems, itemId);
+  
+      dispatch({
+        type: REMOVE_ITEM,
+        payload: data
+      });
+  }
     
-    return { getCart};
+    return { 
+      getCart,
+      removeItem
+    };
 }
 
 export default storeActions;

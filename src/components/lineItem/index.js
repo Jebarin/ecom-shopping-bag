@@ -4,7 +4,7 @@ import QuantityBox from "../quantityBox";
 import styles from './lineItem.module.scss'
 
 const LineItem = (props) =>{
-    const {itemId, quantity, itemName, salesPrice, itemImage} = props;
+    const {itemId, quantity, itemName, salesPrice, itemImage, onRemoveItem} = props;
 
     if(!itemId) return null
 
@@ -18,12 +18,16 @@ const LineItem = (props) =>{
                     <QuantityBox defaultQty={quantity} />
                 </div>
                 <div className={styles['item-details-block']}>
-                    <Button>Remove</Button>
+                    <Button onClick={() => onRemoveItem?.(itemId)}>Remove</Button>
                     <Button>Save For Later</Button>
                 </div>
             </div>
         </div>
     )
+}
+
+LineItem.defaultProps = {
+    onRemoveItem: null
 }
 
 export default React.memo(LineItem);

@@ -6,7 +6,7 @@ import { useCartContext } from '../cartContext';
  * @returns 
  */
 const CartItems = () =>{
-    const {cartItems, bagCount, isCartLoaded} = useCartContext();
+    const {cartItems, bagCount, isCartLoaded, removeItem} = useCartContext();
 
     return (
         <>
@@ -19,7 +19,7 @@ const CartItems = () =>{
                     <h1>Active Items ({bagCount})</h1>
                     {
                         cartItems.map((item)=> (
-                            <LineItem key={item.itemId}  {...item} />
+                            <LineItem key={item.itemId} onRemoveItem={removeItem}   {...item} />
                         ))
                     }
                 </>

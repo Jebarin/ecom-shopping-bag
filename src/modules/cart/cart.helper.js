@@ -18,3 +18,7 @@ export const getBagCount = (items = []) =>{
 
     return qty;
 }
+
+export const removeItemFromCart = (items = [], itemId) =>{
+    return items?.filter((item) => item.itemId !== itemId);
+}
