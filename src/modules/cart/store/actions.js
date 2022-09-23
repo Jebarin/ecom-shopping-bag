@@ -1,5 +1,5 @@
-import {UPDATE_CART, REMOVE_ITEM, UPDATE_QUANTITY, MOVE_TO_WISHLIST} from './actionTypes';
-import { fetchCartData, removeItemFromCart, updateCartQuantity, moveItemToWishList} from '../cart.helper';
+import {UPDATE_CART, REMOVE_ITEM, UPDATE_QUANTITY, MOVE_TO_WISHLIST, REMOVE_FROM_WISHLIST} from './actionTypes';
+import { fetchCartData, removeItemFromCart, updateCartQuantity, moveItemToWishList, removeItemFromWishList} from '../cart.helper';
 
 const storeActions = (dispatch, state) =>{
 
@@ -41,12 +41,23 @@ const storeActions = (dispatch, state) =>{
       payload: data
     });
   }
+
+  const removeFromWishList = (itemId) => {
+    const {cartItems, savedList} = state;
+    const data = removeItemFromWishList(cartItems, savedList, itemId);
+
+    dispatch({
+      type: REMOVE_FROM_WISHLIST,
+      payload: data
+    });
+  }
     
   return { 
     getCart,
     removeItem,
     updateQuanity,
-    moveToWishList
+    moveToWishList,
+    removeFromWishList
   };
 }
 

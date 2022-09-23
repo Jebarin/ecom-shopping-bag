@@ -4,7 +4,7 @@ import QuantityBox from "../quantityBox";
 import styles from './lineItem.module.scss'
 
 const LineItem = (props) =>{
-    const {itemId, quantity, itemName, salesPrice, itemImage, onRemoveItem, onQuantityUpdate, qtyReadOnly, onMoveToWishListAction} = props;
+    const {itemId, quantity, itemName, salesPrice, itemImage, onRemoveItem, onQuantityUpdate, qtyReadOnly, onMoveToWishListAction, onRemoveFromWishListAction} = props;
 
     if(!itemId) return null
 
@@ -20,6 +20,7 @@ const LineItem = (props) =>{
                 <div className={styles['item-details-block']}>
                     <Button onClick={() => onRemoveItem?.(itemId)}>Remove</Button>
                     {onMoveToWishListAction && <Button onClick={() => onMoveToWishListAction?.(itemId)}>Save For Later</Button> }
+                    {onRemoveFromWishListAction && <Button onClick={() => onRemoveFromWishListAction?.(itemId)}>Move To Bag</Button> }
                 </div>
             </div>
         </div>
@@ -30,7 +31,8 @@ LineItem.defaultProps = {
     onRemoveItem: null,
     onQuantityUpdate: null,
     qtyReadOnly: false,
-    onMoveToWishListAction: null
+    onMoveToWishListAction: null,
+    onRemoveFromWishListAction: null
 }
 
 export default React.memo(LineItem);

@@ -47,3 +47,21 @@ export const moveItemToWishList = (cartItems = [], savedList = [], itemId) =>{
         savedList: updatedSavedList
     }
 }
+
+export const removeItemFromWishList = (cartItems = [], savedList = [], itemId) =>{
+    const updatedCartItems = [...cartItems];
+
+    const updatedSavedList  = savedList?.map((item) => {
+        if(item.itemId === itemId){
+            updatedCartItems.push(item);
+            return null;
+        }
+    
+        return item;
+    }).filter(Boolean);
+
+    return {
+        cartItems: updatedCartItems,
+        savedList: updatedSavedList
+    }
+}

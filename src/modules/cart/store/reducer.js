@@ -1,5 +1,5 @@
 
-import {UPDATE_CART, REMOVE_ITEM, UPDATE_QUANTITY, MOVE_TO_WISHLIST} from './actionTypes'
+import {UPDATE_CART, REMOVE_ITEM, UPDATE_QUANTITY, MOVE_TO_WISHLIST, REMOVE_FROM_WISHLIST} from './actionTypes'
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -19,6 +19,7 @@ const cartReducer = (state, action) => {
         ]
       };
     }
+    case REMOVE_FROM_WISHLIST:
     case MOVE_TO_WISHLIST: {
       return { 
         ...state,
