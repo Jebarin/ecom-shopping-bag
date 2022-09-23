@@ -1,14 +1,11 @@
-import { removeItemFromCart } from '../cart.helper';
+import { removeItemFromCart, updateCartQuantity } from '../cart.helper';
 
 const cartData = {
   "cartItems": [
     {
       "itemId": "7d0f8",
       "itemName": "Mens jeans",
-    },
-    {
-      "itemId": "68afe",
-      "itemName": "Shirt",
+      "quantity": 3,
     },
   ],
   "savedList": [
@@ -16,8 +13,6 @@ const cartData = {
         "itemId": "667f",
         "itemName": "Watches",
         "quantity": 1,
-        "salesPrice": 10.95,
-        "itemImage": "https://via.placeholder.com/150"
     }
   ]
 } 
@@ -29,3 +24,10 @@ test('remove item', () => {
   expect(res.length).toEqual(0);
 });
  
+test('update quanity', () => {
+  const cartItems = [{...cartData.cartItems[0]}];
+
+  const res = updateCartQuantity(cartItems, cartItems[0]['itemId'], 5);
+
+  expect(res[0]['quantity']).toEqual(5);
+})
