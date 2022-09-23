@@ -59,3 +59,10 @@ test('trigger a callback when quanity updated', () => {
     expect(callBack).toHaveBeenCalledTimes(1);
     expect(callBack).toHaveBeenCalledWith(6);
 });
+
+test('readonly mode', () => {
+    const { getByTestId, queryByTestId } = render(<QuantityBox  qtyReadOnly={true} defaultQty={2} />);
+
+    expect(getByTestId('quantity-box').innerHTML).toEqual('2');
+    expect(queryByTestId(/quantity-increase/i)).toBeFalsy();
+});
