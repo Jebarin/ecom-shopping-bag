@@ -1,16 +1,21 @@
+import React from 'react';
 import Button from "../button";
 import QuantityBox from "../quantityBox";
 import styles from './lineItem.module.scss'
 
-const LineItem = () =>{
+const LineItem = (props) =>{
+    const {itemId, quantity, itemName, salesPrice, itemImage} = props;
+
+    if(!itemId) return null
+
     return (
         <div className={styles.item}>
-            <img className={styles['item-image']} alt="product" src="https://via.placeholder.com/150" />
+            <img className={styles['item-image']} alt="product" src={itemImage} />
             <div className={styles['item-details']}>
-                <h2>Men's Jeans</h2>
+                <h2>{itemName}</h2>
                 <div className={styles['item-details-block']}>
-                    Price $55.00
-                    <QuantityBox/>
+                    Price ${salesPrice}
+                    <QuantityBox defaultQty={quantity} />
                 </div>
                 <div className={styles['item-details-block']}>
                     <Button>Remove</Button>
@@ -21,4 +26,4 @@ const LineItem = () =>{
     )
 }
 
-export default LineItem;
+export default React.memo(LineItem);

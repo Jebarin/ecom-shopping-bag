@@ -1,16 +1,29 @@
-
 import LineItem from '../../../components/lineItem';
+import { useCartContext } from '../cartContext';
 
 /**
  * Cart Items
  * @returns 
  */
 const CartItems = () =>{
+    const {cartItems, bagCount, isCartLoaded} = useCartContext();
 
     return (
         <>
-            <h1>Active Items (1)</h1>
-            <LineItem />
+            {isCartLoaded && cartItems?.length === 0 && (
+                <h3>Your Shopping Bag is empty</h3>
+            )}
+
+            {isCartLoaded && cartItems?.length > 0 && (
+                <>
+                    <h1>Active Items ({bagCount})</h1>
+                    {
+                        cartItems.map((item)=> (
+                            <LineItem key={item.itemId}  {...item} />
+                        ))
+                    }
+                </>
+            )}
         </>
     )
 }
