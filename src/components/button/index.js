@@ -1,4 +1,4 @@
-import styles from './styles.module.scss'
+import styles from './button.module.scss'
 
 /**
  * Button Component
@@ -6,13 +6,13 @@ import styles from './styles.module.scss'
  * @returns 
  */
 const Button = (props) =>{
-    const {action, id, classes, busy, disabled, onClick, busyLabel, children} = props;
+    const {action, id, className, busy, disabled, onClick, busyLabel, children} = props;
 
     return (
         <button
           type={action}
           id={id}
-          className={`${styles.btn} ${classes}`}
+          className={`${styles.btn} ${className}`}
           disabled={busy || disabled}
           onClick={onClick}
         >
