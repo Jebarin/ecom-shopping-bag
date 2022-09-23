@@ -1,4 +1,4 @@
-import { removeItemFromCart, updateCartQuantity } from '../cart.helper';
+import { getBagCount, removeItemFromCart, updateCartQuantity } from '../cart.helper';
 
 const cartData = {
   "cartItems": [
@@ -19,15 +19,21 @@ const cartData = {
 
 test('remove item', () => {
   const cartItems = [{...cartData.cartItems[0]}];
-
-  const res = removeItemFromCart(cartItems, cartItems[0]['itemId'])
+  const res = removeItemFromCart(cartItems, cartItems[0]['itemId']);
+  
   expect(res.length).toEqual(0);
 });
  
 test('update quanity', () => {
   const cartItems = [{...cartData.cartItems[0]}];
-
   const res = updateCartQuantity(cartItems, cartItems[0]['itemId'], 5);
 
   expect(res[0]['quantity']).toEqual(5);
+})
+
+test('get bag count', () => {
+  const cartItems = [...cartData.cartItems];
+  const res = getBagCount(cartItems);
+
+  expect(res).toEqual(3);
 })
