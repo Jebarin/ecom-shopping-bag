@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './button.module.scss'
 
 /**
@@ -32,4 +33,4 @@ Button.defaultProps = {
     children: "Submit"
 };
   
-export default Button;
+export default React.memo(Button);
