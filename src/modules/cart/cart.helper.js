@@ -22,3 +22,11 @@ export const getBagCount = (items = []) =>{
 export const removeItemFromCart = (items = [], itemId) =>{
     return items?.filter((item) => item.itemId !== itemId);
 }
+
+export const updateCartQuantity = (items = [], itemId, qty) =>{
+    return items?.map((item) => {
+        if(item.itemId === itemId) item.quantity = qty;
+        return item;
+    });
+}
+

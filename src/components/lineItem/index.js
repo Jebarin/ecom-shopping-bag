@@ -4,7 +4,7 @@ import QuantityBox from "../quantityBox";
 import styles from './lineItem.module.scss'
 
 const LineItem = (props) =>{
-    const {itemId, quantity, itemName, salesPrice, itemImage, onRemoveItem} = props;
+    const {itemId, quantity, itemName, salesPrice, itemImage, onRemoveItem, onQuantityUpdate, qtyReadOnly} = props;
 
     if(!itemId) return null
 
@@ -15,7 +15,7 @@ const LineItem = (props) =>{
                 <h2>{itemName}</h2>
                 <div className={styles['item-details-block']}>
                     Price ${salesPrice}
-                    <QuantityBox defaultQty={quantity} />
+                    <QuantityBox onChange={(qty) => onQuantityUpdate?.(itemId, qty)}  defaultQty={quantity} qtyReadOnly={qtyReadOnly}  />
                 </div>
                 <div className={styles['item-details-block']}>
                     <Button onClick={() => onRemoveItem?.(itemId)}>Remove</Button>
@@ -27,7 +27,9 @@ const LineItem = (props) =>{
 }
 
 LineItem.defaultProps = {
-    onRemoveItem: null
+    onRemoveItem: null,
+    onQuantityUpdate: null,
+    qtyReadOnly: false
 }
 
 export default React.memo(LineItem);
