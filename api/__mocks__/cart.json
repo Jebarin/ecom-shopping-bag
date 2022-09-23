@@ -4,29 +4,29 @@
             "itemId": "7d0f8",
             "itemName": "mens jeans",
             "quantity": 1,
-            "regularPrice": 79.95,
-            "savingsPrice": 0
+            "salesPrice": 79.95,
+            "itemImage": "https://via.placeholder.com/150"
         },
         {
             "itemId": "68afe",
             "itemName": "mens jeans",
             "quantity": 4,
-            "regularPrice": 55.15,
-            "savingsPrice": 0
+            "salesPrice": 55.15,
+            "itemImage": "https://via.placeholder.com/150"
         },
         {
             "itemId": "45afe",
             "itemName": "mens jeans",
             "quantity": 3,
-            "regularPrice": 5.00,
-            "savingsPrice": 0
+            "salesPrice": 5.00,
+            "itemImage": "https://via.placeholder.com/150"
         },
         {
             "itemId": "6834e",
             "itemName": "mens shirts",
             "quantity": 2,
-            "regularPrice": 7.00,
-            "savingsPrice": 0
+            "salesPrice": 7.00,
+            "itemImage": "https://via.placeholder.com/150"
         }
     ],
     "savedList": [
@@ -34,8 +34,8 @@
             "itemId": "667f",
             "itemName": "mens jeans",
             "quantity": 1,
-            "regularPrice": 10.95,
-            "savingsPrice": 0
+            "salesPrice": 10.95,
+            "itemImage": "https://via.placeholder.com/150"
         }
     ]
 
