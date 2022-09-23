@@ -1,11 +1,10 @@
 import './App.css';
+import Cart from './modules/cart'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        shopping cart
-      </header>
+      <Cart />
     </div>
   );
 }
