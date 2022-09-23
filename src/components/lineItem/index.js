@@ -9,12 +9,12 @@ const LineItem = (props) => {
     if(!itemId) return null
 
     return (
-        <div className={styles.item}>
+        <div className={styles.item} data-testid="line-item">
             <img className={styles['item-image']} alt="product" src={itemImage} />
             <div className={styles['item-details']}>
                 <h2>{itemName}</h2>
                 <div className={styles['item-details-block']}>
-                    Price ${salesPrice}
+                    {`Price $${salesPrice}`}
                     <QuantityBox onChange={(qty) => onQuantityUpdate?.(itemId, qty)}  defaultQty={quantity} qtyReadOnly={qtyReadOnly}  />
                 </div>
                 <div className={styles['item-details-block']}>
