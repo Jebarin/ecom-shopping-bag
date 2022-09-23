@@ -7,7 +7,7 @@ import { useCartContext } from '../cartContext';
  * @returns 
  */
 const WishList = () =>{
-    const {savedList, isCartLoaded, removeFromWishList } = useCartContext(); 
+    const {savedList, isCartLoaded, removeFromWishList, deleteWishListItem} = useCartContext(); 
 
     if(!isCartLoaded || savedList?.length ===0) return null;
 
@@ -15,7 +15,7 @@ const WishList = () =>{
         <>
             <h2>Saved For Later Items ({savedList.length})</h2>
             {savedList.map((item)=>(
-                <LineItem  key={item.itemId} onRemoveFromWishListAction={removeFromWishList} {...item}  qtyReadOnly={true} />
+                <LineItem  key={item.itemId} onRemoveFromWishListAction={removeFromWishList} onRemoveItem={deleteWishListItem} {...item}  qtyReadOnly={true} />
             ))}
             
         </>

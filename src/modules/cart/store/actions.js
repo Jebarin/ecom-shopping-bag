@@ -1,4 +1,4 @@
-import {UPDATE_CART, REMOVE_ITEM, UPDATE_QUANTITY, MOVE_TO_WISHLIST, REMOVE_FROM_WISHLIST} from './actionTypes';
+import {UPDATE_CART, REMOVE_ITEM, UPDATE_QUANTITY, MOVE_TO_WISHLIST, REMOVE_FROM_WISHLIST, DELETE_WISHLIST_ITEM} from './actionTypes';
 import { fetchCartData, removeItemFromCart, updateCartQuantity, moveItemToWishList, removeItemFromWishList} from '../cart.helper';
 
 const storeActions = (dispatch, state) =>{
@@ -51,13 +51,24 @@ const storeActions = (dispatch, state) =>{
       payload: data
     });
   }
+
+  const deleteWishListItem = (itemId) => {
+      const { savedList} = state;
+      const data = removeItemFromCart(savedList, itemId);
+
+      dispatch({
+        type: DELETE_WISHLIST_ITEM,
+        payload: data
+      });
+  }
     
   return { 
     getCart,
     removeItem,
     updateQuanity,
     moveToWishList,
-    removeFromWishList
+    removeFromWishList,
+    deleteWishListItem
   };
 }
 
