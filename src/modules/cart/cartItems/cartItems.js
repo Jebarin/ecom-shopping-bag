@@ -28,4 +28,8 @@ const CartItems = () =>{
     )
 }
 
+CartItems.defaultProps = {
+    cartItems: []
+}
+
 export default CartItems;
