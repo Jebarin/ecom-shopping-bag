@@ -2,28 +2,28 @@
     "cartItems": [
         {
             "itemId": "7d0f8",
-            "itemName": "mens jeans",
+            "itemName": "Mens jeans",
             "quantity": 1,
             "salesPrice": 79.95,
             "itemImage": "https://via.placeholder.com/150"
         },
         {
             "itemId": "68afe",
-            "itemName": "mens jeans",
+            "itemName": "Shirt",
             "quantity": 4,
             "salesPrice": 55.15,
             "itemImage": "https://via.placeholder.com/150"
         },
         {
             "itemId": "45afe",
-            "itemName": "mens jeans",
+            "itemName": "Shoes",
             "quantity": 3,
             "salesPrice": 5.00,
             "itemImage": "https://via.placeholder.com/150"
         },
         {
             "itemId": "6834e",
-            "itemName": "mens shirts",
+            "itemName": "Womens Shirt",
             "quantity": 2,
             "salesPrice": 7.00,
             "itemImage": "https://via.placeholder.com/150"
@@ -32,7 +32,7 @@
     "savedList": [
         {
             "itemId": "667f",
-            "itemName": "mens jeans",
+            "itemName": "Watches",
             "quantity": 1,
             "salesPrice": 10.95,
             "itemImage": "https://via.placeholder.com/150"
