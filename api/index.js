@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const cartJson = require('./__mocks__/cart.json');
 
 const app = express();
+app.use(cors());
 const PORT = 3001;
 
 // Cart API
