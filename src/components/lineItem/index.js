@@ -5,7 +5,7 @@ import styles from './lineItem.module.scss'
 const LineItem = () =>{
     return (
         <div className={styles.item}>
-            <img className={styles['item-image']} src="https://via.placeholder.com/150" />
+            <img className={styles['item-image']} alt="product" src="https://via.placeholder.com/150" />
             <div className={styles['item-details']}>
                 <h2>Men's Jeans</h2>
                 <div className={styles['item-details-block']}>
