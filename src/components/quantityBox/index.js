@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
 export const MIN_QUANTITY = 1;

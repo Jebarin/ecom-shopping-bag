@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from "../button";
 import QuantityBox from "../quantityBox";
-import styles from './lineItem.module.scss'
+import styles from './lineItem.module.scss';
 
-const LineItem = (props) =>{
+const LineItem = (props) => {
     const {itemId, quantity, itemName, salesPrice, itemImage, onRemoveItem, onQuantityUpdate, qtyReadOnly, onMoveToWishListAction, onRemoveFromWishListAction} = props;
 
     if(!itemId) return null

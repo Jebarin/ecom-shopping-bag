@@ -6,7 +6,7 @@ import { useCartContext } from '../cartContext';
  * Wish List
  * @returns 
  */
-const WishList = () =>{
+const WishList = () => {
     const {savedList, isCartLoaded, removeFromWishList, deleteWishListItem} = useCartContext(); 
 
     if(!isCartLoaded || savedList?.length ===0) return null;

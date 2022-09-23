@@ -5,7 +5,7 @@ import { useCartContext } from '../cartContext';
  * Cart Items
  * @returns 
  */
-const CartItems = () =>{
+const CartItems = () => {
     const {cartItems, bagCount, isCartLoaded, removeItem, updateQuanity, moveToWishList} = useCartContext();
 
     return (

@@ -1,5 +1,5 @@
-import { render, fireEvent, screen } from '@testing-library/react';
-import QuantityBox, {MIN_QUANTITY, MAX_QUANTITY } from '../index';
+import { fireEvent, render, screen } from '@testing-library/react';
+import QuantityBox, { MAX_QUANTITY, MIN_QUANTITY } from '../index';
 
 test('renders QuantityBox with default props', () => {
     render(<QuantityBox />);

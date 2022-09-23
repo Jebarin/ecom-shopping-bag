@@ -1,14 +1,14 @@
-import {useEffect} from 'react';
-import CartItems from './cartItems/cartItems'; 
-import WishList from './wishList';
+import { useEffect } from 'react';
 import styles from './cart.module.scss';
-import {useCartContext} from './cartContext';
+import { useCartContext } from './cartContext';
+import CartItems from './cartItems/cartItems';
+import WishList from './wishList';
 
 /**
  * Cart
  * @returns 
  */
-const Cart = () =>{
+const Cart = () => {
     const { getCart, showWishList } = useCartContext();
 
     useEffect(() => {

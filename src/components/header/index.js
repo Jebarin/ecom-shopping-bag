@@ -1,7 +1,7 @@
 import { useCartContext } from '../../modules/cart/cartContext';
 import styles from './header.module.scss';
 
-const Header = () =>{
+const Header = () => {
     const {bagCount} = useCartContext();
     
     return (

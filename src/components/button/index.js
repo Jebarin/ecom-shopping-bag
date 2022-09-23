@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './button.module.scss'
+import styles from './button.module.scss';
 
 /**
  * Button Component
  * @param {*} props 
  * @returns 
  */
-const Button = (props) =>{
+const Button = (props) => {
     const {action, id, className, busy, disabled, onClick, busyLabel, children} = props;
 
     return (

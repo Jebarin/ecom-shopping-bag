@@ -1,4 +1,4 @@
-import {CART_API_ENDPOINT} from '../../configs'
+import { CART_API_ENDPOINT } from '../../configs';
 
 export const fetchCartData = async () => {
     let response;
@@ -12,14 +12,14 @@ export const fetchCartData = async () => {
     return response?.json?.();
 }
 
-export const getBagCount = (items = []) =>{
+export const getBagCount = (items = []) => {
     let qty = 0;
     items.forEach((item)=>  qty += item.quantity)
 
     return qty;
 }
 
-export const removeItemFromCart = (items = [], itemId) =>{
+export const removeItemFromCart = (items = [], itemId) => {
     return items?.filter((item) => item.itemId !== itemId);
 }
 
@@ -30,7 +30,7 @@ export const updateCartQuantity = (items = [], itemId, qty) =>{
     });
 }
 
-export const moveItemToWishList = (cartItems = [], savedList = [], itemId) =>{
+export const moveItemToWishList = (cartItems = [], savedList = [], itemId) => {
     const updatedSavedList = [...savedList];
 
     const updatedCartItems  = cartItems?.map((item) => {
@@ -48,7 +48,7 @@ export const moveItemToWishList = (cartItems = [], savedList = [], itemId) =>{
     }
 }
 
-export const removeItemFromWishList = (cartItems = [], savedList = [], itemId) =>{
+export const removeItemFromWishList = (cartItems = [], savedList = [], itemId) => {
     const updatedCartItems = [...cartItems];
 
     const updatedSavedList  = savedList?.map((item) => {

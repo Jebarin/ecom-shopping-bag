@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useReducer } from 'react';
-import cartReducer from './store/reducer';
-import storeActions from './store/actions'
 import { getBagCount } from './cart.helper';
+import storeActions from './store/actions';
+import cartReducer from './store/reducer';
 
 const CartContext = createContext({});
 const initialState = {
