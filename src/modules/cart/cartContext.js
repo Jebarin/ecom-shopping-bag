@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useReducer } from 'react';
-import { getBagCount } from './cart.helper';
+import { getBagCount } from './helpers/cart.helper';
 import storeActions from './store/actions';
 import cartReducer from './store/reducer';
 

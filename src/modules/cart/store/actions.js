@@ -1,4 +1,4 @@
-import { fetchCartData, moveItemToWishList, removeItemFromCart, removeItemFromWishList, updateCartQuantity } from '../cart.helper';
+import { fetchCartData, moveItemToWishList, removeItemFromCart, removeItemFromWishList, updateCartQuantity } from '../helpers/cart.helper';
 import { DELETE_WISHLIST_ITEM, MOVE_TO_WISHLIST, REMOVE_FROM_WISHLIST, REMOVE_ITEM, UPDATE_CART, UPDATE_QUANTITY } from './actionTypes';
 
 const storeActions = (dispatch, state) =>{
