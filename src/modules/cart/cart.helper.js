@@ -30,3 +30,20 @@ export const updateCartQuantity = (items = [], itemId, qty) =>{
     });
 }
 
+export const moveItemToWishList = (cartItems = [], savedList = [], itemId) =>{
+    const updatedSavedList = [...savedList];
+
+    const updatedCartItems  = cartItems?.map((item) => {
+        if(item.itemId === itemId){
+            updatedSavedList.push(item);
+            return null;
+        }
+        
+        return item;
+    }).filter(Boolean);
+
+    return {
+        cartItems: updatedCartItems,
+        savedList: updatedSavedList
+    }
+}
